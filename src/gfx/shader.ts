@@ -29,7 +29,7 @@ export default class Shader {
     gl.compileShader(this.shader);
 
     // Checking for compile errors
-    if (gl.getShaderParameter(this.shader, gl.COMPILE_STATUS)) {
+    if (!gl.getShaderParameter(this.shader, gl.COMPILE_STATUS)) {
       console.log(
         "ERROR: Failed to compile shader!: ",
         gl.getShaderInfoLog(this.shader)

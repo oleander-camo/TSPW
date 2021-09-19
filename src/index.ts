@@ -6,6 +6,8 @@ import fragmentShaderSource from "!!raw-loader!./res/basic.fs.glsl";
 import Shader from "./gfx/shader";
 import { ShaderType } from "./gfx/shader";
 
+import GPProgram from "./gfx/gp-program";
+
 const { canvas, gl }: IRenderSetup = renderSetup(800, 600);
 
 function main() {
@@ -23,6 +25,15 @@ function main() {
     ShaderType.Fragment,
     fragmentShaderSource
   );
+
+  const gpProgram: GPProgram = new GPProgram(gl, vertexShader, fragmentShader);
+
+  const vertices: number[] = [
+    -0.5, -0.5, 1.0, 0.0, 0.0, 0.5, -0.5, 0.0, 1.0, 0.0, -0.5, 0.5, 0.0, 0.0,
+    1.0, 0.5, 0.5, 0.0, 1.0, 0.0,
+  ];
+
+  const indices: number[] = [0, 1, 2, 1, 2, 3];
 }
 
 document.body.onload = main;
