@@ -105,4 +105,3 @@ dist
 
 # Actually useful stuff
 .gitignore
-package-lock.json
