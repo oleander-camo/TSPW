@@ -102,3 +102,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Actually useful stuff
+.gitignore
+node_modules
+package-lock.json
