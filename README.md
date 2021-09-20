@@ -10,7 +10,7 @@ TSPW is a TypeScript library that helps out with WebGL and math
 
 In this section I will show you how to create the following
 
-![Rectangle made in TSPW](https://github.com/oleander-camo/TSPW/doc-pics/rectangle.png)
+![Rectangle made in TSPW](https://github.com/oleander-camo/TSPW/blob/main/doc-pics/rectangle.png)
 
 ### First we will start with the TypeScript
 
