@@ -28,4 +28,29 @@ export default class GPProgram {
       if (onLinkError) onLinkError();
     }
   }
+
+  sendData(
+    gl: WebGLRenderingContext,
+    nameInShader: string,
+    size: number,
+    stride: number,
+    offset: number
+  ) {
+    const attribLocation = gl.getAttribLocation(this.program, nameInShader);
+
+    gl.vertexAttribPointer(
+      attribLocation,
+      size,
+      gl.FLOAT,
+      false,
+      stride * Float32Array.BYTES_PER_ELEMENT,
+      offset * Float32Array.BYTES_PER_ELEMENT
+    );
+
+    gl.enableVertexAttribArray(attribLocation);
+  }
+
+  use(gl: WebGLRenderingContext) {
+    gl.useProgram(this.program);
+  }
 }
