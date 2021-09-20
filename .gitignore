@@ -104,5 +104,4 @@ dist
 .tern-port
 
 # Custom
-doc-pics/
-package-lock.json
+# doc-pics/
